@@ -1,0 +1,114 @@
+.navbar {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    color: var(--text-primary);
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.highlight-text {
+    color: var(--accent-safety);
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 20px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+}
+
+.nav-item {
+    height: 80px;
+}
+
+.nav-links {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-links:hover {
+    color: var(--accent-safety);
+}
+
+.nav-links.active-link {
+    color: var(--accent-safety);
+    border-bottom: 3px solid var(--accent-safety);
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+        background: var(--bg-color-alt);
+    }
+
+    .nav-menu.active {
+        background: var(--bg-color-alt);
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--text-primary);
+    }
+}
